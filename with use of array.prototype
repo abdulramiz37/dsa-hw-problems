@@ -1,0 +1,24 @@
+Array.prototype.myfilter= function (cbn) {
+  
+  const newArr = [];
+  
+  this.forEach((element)=> {
+    const res =cbn(element%2!=0);
+    
+    if(res==true){
+    newArr.push(element);
+    }
+  })
+  return newArr;
+}
+
+const odd =(element) => {
+ 
+    return element;
+}
+
+const arr = [1,2,3,4,5];
+
+// const result = myfilter(arr,odd)
+
+const result = arr.myfilter(odd);
